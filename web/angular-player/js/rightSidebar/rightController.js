@@ -1,4 +1,4 @@
-angular.module('playerApp').controller('rightController', ['$interval','service',function ($interval,service) {
+angular.module('playerApp').controller('rightController', ['$interval', 'service', function ($interval, service) {
 
     this.service = service
 
@@ -6,23 +6,21 @@ angular.module('playerApp').controller('rightController', ['$interval','service'
         if (service.total < 100) {
             alert(service.errorMsg)
         } else {
-            // alert("in autobutton")
+
             this.addTimed()
             service.startAutoClicker()
         }
-        // $('#autoClickerCount').html('AutoClickerCount : '  + aCounter)
+
         if (service.total >= 100) {
             service.total = service.total - 100
         }
-        // service.auto_button()
     }
 
     this.addTimed = () => {
         if (service.stopFlag === 0) {
-            
+
             service.displayTotal()
-            $interval( () =>{
-                // alert("in interval")
+            $interval(() => {
                 if (service.multi > 1.2) {
                     service.total = service.total + service.multi
                 }
@@ -34,8 +32,9 @@ angular.module('playerApp').controller('rightController', ['$interval','service'
         else {
             service.stopFlag = 0;
         }
-        // this.checkTotal()
+        service.storeCookies()
     }
+
 
 
 }])

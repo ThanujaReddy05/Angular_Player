@@ -1,16 +1,10 @@
-angular.module('playerApp').controller('headerController', ['service', function(service) {
-    
-        this.service = service
-       
-        this.clear = () => {
-            
-                service.clear();
-                
-                
-            }
+angular.module('playerApp').controller('headerController', ['service', function (service) {
 
-        //     this.displayTotal = () => {
-        //             service.displayTotal()
-        //     }
-    
-    }])
+        this.service = service
+        service.retrieveCookies()
+
+        this.clear = () => {
+                service.clear();
+        }
+
+}])

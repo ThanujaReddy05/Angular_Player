@@ -10,6 +10,6 @@ angular.module('playerApp').controller('leftController', ['service', function (s
             service.total = service.total - 10
             service.multi_button()
         }
-
+        service.storeCookies()
     }
 }])
